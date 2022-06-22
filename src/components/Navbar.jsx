@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="fixed w-screen py-2">
+    <nav className="fixed w-screen py-2 top-0 h-14 bg-black/75 overflow-hidden">
       <div className="flex items-center justify-between max-w-[1200px] mx-auto">
         <div className="logo">
           <svg
