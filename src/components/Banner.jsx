@@ -29,7 +29,7 @@ function Banner() {
         backgroundPosition: "center center",
         backgroundSize: "cover",
       }}
-      className="h-screen sm:h-[648px] w-full object-cover
+      className="h-[648px] w-full object-cover
       text-white relative -z-1
       "
     >

@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  const [onScroll, setOnScroll] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 100 ? setOnScroll(true) : setOnScroll(false);
+    });
+  }, []);
+
   return (
-    <nav className="fixed w-screen py-2 top-0 h-14 bg-black/75 overflow-hidden">
-      <div className="flex items-center justify-between max-w-[1200px] mx-auto">
+    <nav
+      className={`fixed w-screen py-2 top-0 h-14 overflow-hidden z-10 transition-colors duration-500
+     ${onScroll && "bg-black/75"}`}
+    >
+      <div className="flex items-center justify-between px-2 sm:px-8 mx-auto">
         <div className="logo">
           <svg
             viewBox="0 0 111 30"
-            className="svg-icon svg-icon-netflix-logo fill-brand h-9 w-[134px]"
+            className="svg-icon svg-icon-netflix-logo fill-brand-red h-9 w-[134px]"
             aria-hidden="true"
             focusable="false"
           >
@@ -21,11 +32,8 @@ function Navbar() {
           </svg>
         </div>
         <div className="flex gap-1 items-center">
-          <Link to="/signin">
-            <button className="bg-transparent">Sign In</button>
-          </Link>
-          <Link to="/Signup">
-            <button>Sign Up</button>
+          <Link to="/Signin">
+            <button className="button button-brand">Sign In</button>
           </Link>
         </div>
       </div>
