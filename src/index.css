@@ -19,6 +19,11 @@
   .button-transparent {
     @apply text-white font-bold px-4 text-xs sm:text-sm py-1 sm:px-8 sm:py-2 border-none focus:outline-none transition-all bg-[rgba(51,51,51,.5)] hover:text-black hover:bg-white shadow-2xl
   }
+
+  /* Netflix Row Component */
+  .icon {
+    @apply hidden bg-brand-red absolute top-1/2 z-10 w-6 h-6 p-2 rounded-full hover:brightness-125 transition-all cursor-pointer ring-2 ring-white  ring-offset-transparent
+  }
 }
 
 @layer utilities {
@@ -31,4 +36,10 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  /* Neflix Row Component */
+  .netflix-slider:hover > .icon {
+    @apply block;
+  }
+
 }
