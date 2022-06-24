@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import requests from "../requests";
+import requests from "../utils/requests";
 import { randomize, truncate } from "../utils/functions";
 import Loading from "./Loading";
 

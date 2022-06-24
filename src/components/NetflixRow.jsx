@@ -26,7 +26,7 @@ function NetflixRow({ title, url, isPortrait }) {
       Loading
     </div>
   ) : (
-    <section className="px-4 md:px-8 mt-6 relative">
+    <section className="pl-4 md:pl-8 mr-4 mt-6 relative">
       <h2
         className={`text-white text-xl font-semibold mb-2 ${
           isPortrait && "uppercase"
