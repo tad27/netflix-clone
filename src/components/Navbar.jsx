@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <nav
       className={`fixed w-screen py-2 pr-4 md:pr-0 top-0 h-14 overflow-hidden z-10 transition-colors duration-500
-     ${onScroll && "bg-black/75"}`}
+     ${onScroll && "bg-brand-black/75"}`}
     >
       <div className="flex items-center justify-between px-2 sm:px-8 mx-auto">
         <div className="logo">

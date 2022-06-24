@@ -22,7 +22,9 @@ function NetflixRow({ title, url, isPortrait }) {
   }, [url]);
 
   return loading ? (
-    <div className="flex items-center justify-center h-full">Loading</div>
+    <div className="flex items-center justify-center h-full text-white/20">
+      Loading
+    </div>
   ) : (
     <section className="px-4 md:px-8 mt-6 relative">
       <h2
@@ -37,11 +39,11 @@ function NetflixRow({ title, url, isPortrait }) {
         className="netflix-slider flex gap-2 overflow-x-scroll scroll-smooth no-scrollbar"
       >
         <FaChevronLeft
-          className="icon left-2"
+          className="icon left-5"
           onClick={() => slideLeft(rowId)}
         />
         <FaChevronRight
-          className="icon right-2"
+          className="icon right-5"
           onClick={() => slideRight(rowId)}
         />
         {movies.map((movie) => (
