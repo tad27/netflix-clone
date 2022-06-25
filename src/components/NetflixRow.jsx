@@ -21,11 +21,7 @@ function NetflixRow({ title, url, isPortrait }) {
     getMovies();
   }, [url]);
 
-  return loading ? (
-    <div className="flex items-center justify-center h-full text-white/20">
-      Loading
-    </div>
-  ) : (
+  return (
     <section className="pl-4 md:pl-8 mr-4 mt-6 relative">
       <h2
         className={`text-white text-xl font-semibold mb-2 ${
@@ -46,9 +42,20 @@ function NetflixRow({ title, url, isPortrait }) {
           className="icon right-5"
           onClick={() => slideRight(rowId)}
         />
-        {movies.map((movie) => (
-          <MovieCard key={movie?.id} movie={movie} isPortrait={isPortrait} />
-        ))}
+        {loading ? (
+          <div className="flex gap-2 items-center justify-center h-full text-white/20">
+            {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+              <div
+                key={item}
+                className="min-w-[160px] min-h-[180px] bg-brand-black brightness-125"
+              ></div>
+            ))}
+          </div>
+        ) : (
+          movies.map((movie) => (
+            <MovieCard key={movie?.id} movie={movie} isPortrait={isPortrait} />
+          ))
+        )}
       </div>
     </section>
   );
