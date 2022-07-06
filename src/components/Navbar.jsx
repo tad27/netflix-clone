@@ -19,7 +19,7 @@ function Navbar() {
         <div className="logo">
           <svg
             viewBox="0 0 111 30"
-            className="svg-icon svg-icon-netflix-logo fill-brand-red h-9 w-[134px]"
+            className="svg-icon svg-icon-netflix-logo fill-brand-red h-9 w-3/4 sm:w-[134px]"
             aria-hidden="true"
             focusable="false"
           >
