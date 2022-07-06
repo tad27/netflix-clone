@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import requests from "../utils/requests";
 import { randomize, truncate } from "../utils/functions";
 import Loading from "./Loading";
+import { FaPlay } from "react-icons/fa";
 
 function Banner() {
   const [currentMovie, setCurrentMovie] = useState({});
@@ -40,7 +41,9 @@ function Banner() {
             currentMovie?.original_name}
         </h1>
         <div className="flex flex-wrap gap-2">
-          <button className="button button-transparent">Play</button>
+          <button className="button button-transparent flex items-center gap-2 pl-4">
+            <FaPlay /> Play
+          </button>
           <button className="button button-transparent">MyList</button>
         </div>
         <p className="text-sm sm:max-w-[75%] md:max-w-[50%] lg:max-w-[40%]">
