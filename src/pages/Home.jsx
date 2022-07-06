@@ -13,7 +13,7 @@ function Home() {
       <NetflixRow title="Upcoming" url={requests.upcoming} />
       <NetflixRow title="Comedy" url={requests.comedyMovies} />
       <NetflixRow title="Romance" url={requests.romanceMovies} />
-      <NetflixRow title="Documentries" url={requests.documentaries} />
+      <NetflixRow title="Documentaries" url={requests.documentaries} />
       <br />
     </div>
   );
