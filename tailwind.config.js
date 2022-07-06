@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         brand: {
           red: "#e50914",
-          black: "#111",
+          black: "#000", //#111
         },
       },
     },
