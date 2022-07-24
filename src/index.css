@@ -6,6 +6,12 @@
   body {
     @apply bg-brand-black text-white !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-brand-red
   }
+  footer a{
+    @apply text-brand-gray tracking-wide
+  }
+  footer a:hover {
+    @apply underline
+  }
 
 }
 
