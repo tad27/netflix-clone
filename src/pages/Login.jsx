@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 function Login() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   return (
     <section className="w-full sm:h-screen mt-16 sm:mt-0 pb-16 sm:pb-0 relative grid grid-cols-1 sm:grid-cols-none  items-center justify-center border-b border-white/50 sm:border-none">
       {/* Banner Image */}
@@ -17,45 +24,69 @@ function Login() {
       {/* Content */}
       <div className="min-w-min sm:min-w-[450px] bg-black/75 flex flex-col px-4 sm:p-12 gap-8">
         <h3 className="text-3xl font-semibold">Sign In</h3>
-        <form className="flex flex-col space-y-4">
-          <label className="bg-[#333] p-2 h-10 flex items-end rounded relative w-full">
-            <input
-              className="peer bg-transparent w-full text-xs outline-none placeholder:text-transparent"
-              id="email"
-              type="email"
-              placeholder="email"
-            />
-            <label
-              className="-translate-y-4 text-xs 
+        <form
+          className="flex flex-col space-y-4"
+          onSubmit={handleSubmit(({ email, password }) =>
+            console.log(email, password)
+          )}
+        >
+          <div>
+            <label className="bg-[#333] p-2 h-10 flex items-end rounded relative w-full">
+              <input
+                className="peer bg-transparent w-full text-xs outline-none placeholder:text-transparent"
+                id="email"
+                type="email"
+                {...register("email", {
+                  required: "Email is required",
+                  minLength: 4,
+                })}
+                placeholder="email"
+              />
+              <label
+                className="-translate-y-4 text-xs 
               peer-placeholder-shown:text-sm 
               peer-placeholder-shown:-translate-y-1
               peer-focus:-translate-y-4
               peer-focus:text-xs
               transition-all duration-300 absolute text-brand-gray brightness-125 tracking-wide"
-              htmlFor="email"
-            >
-              Email
+                htmlFor="email"
+              >
+                Email
+              </label>
             </label>
-          </label>
-          <label className="bg-[#333] p-2 h-10 flex items-end rounded relative w-full">
-            <input
-              className="peer bg-transparent w-full text-xs outline-none placeholder:text-transparent font-bold"
-              id="password"
-              type="password"
-              placeholder="password"
-            />
-            <label
-              className="-translate-y-4 text-xs 
+            <p className="text-brand-red/90 text-xs">
+              {errors?.email?.message}
+            </p>
+          </div>
+          <div>
+            <label className="bg-[#333] p-2 h-10 flex items-end rounded relative w-full">
+              <input
+                className="peer bg-transparent w-full text-xs outline-none placeholder:text-transparent font-bold"
+                id="password"
+                type="password"
+                {...register("password", {
+                  required:
+                    "Password is required and must be at least 4 characters long",
+                  minLength: 4,
+                })}
+                placeholder="password"
+              />
+              <label
+                className="-translate-y-4 text-xs 
               peer-placeholder-shown:text-sm 
               peer-placeholder-shown:-translate-y-1
               peer-focus:-translate-y-4
               peer-focus:text-xs
               transition-all duration-300 absolute text-brand-gray brightness-125 tracking-wide"
-              htmlFor="password"
-            >
-              Password
+                htmlFor="password"
+              >
+                Password
+              </label>
             </label>
-          </label>
+            <p className="text-brand-red/90 text-xs">
+              {errors?.password?.message}
+            </p>
+          </div>
 
           <button
             className="button button-brand py-2 !mt-6 block font-semibold"
