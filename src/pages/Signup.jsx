@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-function Login() {
+function Signup() {
   const {
     register,
     handleSubmit,
@@ -23,7 +23,7 @@ function Login() {
 
       {/* Content */}
       <div className="min-w-min sm:min-w-[450px] bg-black/75 flex flex-col px-4 sm:p-12 gap-8">
-        <h3 className="text-3xl font-semibold">Sign In</h3>
+        <h3 className="text-3xl font-semibold">Sign Up</h3>
         <form
           className="flex flex-col space-y-4"
           onSubmit={handleSubmit(({ email, password }) =>
@@ -90,18 +90,17 @@ function Login() {
             className="button button-brand py-2 !mt-6 block font-semibold"
             type="submit"
           >
-            Sign In
+            Sign Up
           </button>
         </form>
         <div className="text-[16px] space-x-1">
-          <span className="text-brand-gray">New to Netflix? </span>
-          <Link className="hover:underline font-semibold" to="/signup">
-            Sign up now
+          <span className="text-brand-gray">Already have account? </span>
+          <Link className="hover:underline font-semibold" to="/login">
+            Login now
           </Link>
         </div>
       </div>
     </section>
   );
 }
-
-export default Login;
+export default Signup;
