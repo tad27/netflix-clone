@@ -1,11 +1,9 @@
 # Netflix Clone with React JS and Tailwind CSS :heart:
----
 
 This Netflix Clone is a simple dummy project that I built only to imporve my web development skills. The application allows users to browse and search for movies and TV shows, and provides a similar user interface to Netflix. This project was built using React, Tailwind, and the TMDB API.
 I also used Firbase for authentication.
 
 ## Features
----
 
 Netflix Clone offers the following features:
 
