@@ -19,7 +19,6 @@ Netflix Clone offers the following features:
 <ul>
 <li><h4>React JS</h4></li>
 <li><h4>Tailwind CSS</h4></li>
-<li><h4>Firebase</h4></li>
 <li><h4>TMDB API</h4></li>
 </ul>
 
