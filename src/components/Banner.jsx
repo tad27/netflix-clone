@@ -30,12 +30,12 @@ function Banner() {
         backgroundPosition: "center center",
         backgroundSize: "cover",
       }}
-      className="h-[50vh] lg:h-[85vh] w-full object-cover
+      className="h-[70svh] sm:h-[60vh] lg:h-[85vh] w-full object-cover
       text-white relative -z-1
       "
     >
       <div className="bg-gradient-to-r from-brand-black to-transparent h-full flex flex-col justify-center space-y-4 p-4 md:p-8 ">
-        <h1 className="max-w-lg text-2xl sm:text-3xl md:text-5xl font-extrabold">
+        <h1 className="max-w-lg text-xl sm:text-3xl md:text-5xl font-extrabold">
           {currentMovie?.title ||
             currentMovie?.name ||
             currentMovie?.original_name}

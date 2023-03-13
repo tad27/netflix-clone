@@ -1,15 +1,14 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { slideLeft, slideRight } from "../utils/functions";
 
+import { mapTitleToId, slideLeft, slideRight } from "../utils/functions";
 import MovieCard from "./MovieCard";
-// import { icons } from "react-icons";
 
 function NetflixRow({ title, url, isPortrait }) {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
-  const rowId = title?.toLowerCase().split(" ").join("-");
+  const rowId = mapTitleToId(title);
 
   useEffect(() => {
     async function getMovies() {

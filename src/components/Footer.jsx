@@ -28,10 +28,7 @@ function Footer() {
         >
           Questions? Contact us.
         </a>
-        <ul
-          role="list"
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2"
-        >
+        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
           {links.map((link, index) => (
             <li key={index} className="">
               <Link to={link.url}>{link.name}</Link>
